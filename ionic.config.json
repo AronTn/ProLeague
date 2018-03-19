@@ -1,0 +1,8 @@
+{
+  "name": "Proleague",
+  "app_id": "ccbe4974",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
