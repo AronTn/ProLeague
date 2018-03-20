@@ -22,7 +22,13 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
+$background-color: #3a588f;
+$card-ios-magin-left: 0px;
+$card-ios-magin-right: 0px;
+$card-md-magin-left: 0px;
+$card-md-magin-right: 0px;
+$card-wp-magin-left: 0px;
+$card-wp-magin-right: 0px;
 
 
 // Named Color Variables
@@ -86,3 +92,7 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$font-family-md-base: "Raleway-Regular";
+$font-family-ios-base: "Raleway-Regular";
+$font-family-wp-base: "Raleway-Regular";

@@ -6,6 +6,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyD6RFzFGGBM3k-Ffw3XIJYbBCCwZtiWPHE",
+    authDomain: "proleague-89311.firebaseapp.com",
+    databaseURL: "https://proleague-89311.firebaseio.com",
+    projectId: "proleague-89311",
+    storageBucket: "proleague-89311.appspot.com",
+    messagingSenderId: "307879616365"
+};
 
 @NgModule({
   declarations: [
@@ -14,7 +26,10 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
