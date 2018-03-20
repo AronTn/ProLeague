@@ -19,8 +19,8 @@ import * as firebase from 'firebase/app';
 export class RegisterPage {
   reg = {
     email: '',
-    password1: '',
-    password2: ''
+    passWord1: '',
+    passWord2: ''
   };
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public alertCtrl: AlertController, private afAuth: AngularFireAuth
@@ -41,19 +41,19 @@ export class RegisterPage {
   }
   regSuccess(res){
     this.displayAlert(this.reg.email, "Compte ajouté avec succès!");
-    this.afAuth.auth.signInWithEmailAndPassword(this.reg.email, this.reg.password1)
+    this.afAuth.auth.signInWithEmailAndPassword(this.reg.email, this.reg.passWord1)
     .then( res => this.navCtrl.push(HomePage))
     .catch( err => this.displayAlert("Error",err)) ;
   }
   registerAccount(){
-    if(this.reg.password1 != this.reg.password2)
+    if(this.reg.passWord1 != this.reg.passWord2)
     {
      this.displayAlert("Erreur de mot de passe!","Les mots de passe de ne confondent pas!")
-     this.reg.password1 = '';
-     this.reg.password2 = '';
+     this.reg.passWord1 = '';
+     this.reg.passWord2 = '';
     }
     else{
-      this.afAuth.auth.createUserWithEmailAndPassword(this.reg.email, this.reg.password1)
+      this.afAuth.auth.createUserWithEmailAndPassword(this.reg.email, this.reg.passWord1)
       .then( res => this.regSuccess(res))
       .catch( err => this.displayAlert("Error",err)) ;
     }
